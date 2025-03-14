@@ -1,0 +1,23 @@
+{
+  "name": "06_express_mysql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/App.js"
+  },
+  "keywords": [
+    "API",
+    "Banco de dados",
+    "SQL",
+    "MySQL"
+  ],
+  "author": "Gabriel Loureiro",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.13.0"
+  }
+}

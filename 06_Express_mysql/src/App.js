@@ -1,6 +1,5 @@
 import express from "express";
-import {createProduto, readProduto, updateProduto} from "./controllers/ProdutoControllers.js";
-import { deletarProduto } from "./models/ProdutoModel.js";
+import {createProduto, deletProduto, readProduto, updateProduto} from "./controllers/ProdutoControllers.js";
 const app = express();
 const port = 3000;
 
@@ -14,7 +13,7 @@ app.get("/", (req, res) => {
 app.post('/produto',createProduto)
 app.get('/produto',readProduto)
 app.put('/produto/:id',updateProduto)
-app.delete('/produto/:id',deletarProduto)
+app.delete('/produto/:id',deletProduto)
 app.listen(port,()=>{ //O listen ele sobe o servidor
     console.log(`APi rodando na porta ${port}`)
 })

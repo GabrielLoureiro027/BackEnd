@@ -89,9 +89,3 @@ export const deletarProduto = async (id_produto) => {
 // atualizanProduto(6,'roma')
 // mostrarProdutos();
 //criandoProduto('roma');
-
-/*
-?asdasdlhasbdl 
-!dfgojdanfpgoidfgpçi
-~ asdaofjnadçfjnwij
-*/

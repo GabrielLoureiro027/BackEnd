@@ -1,41 +1,42 @@
- // Importando o modulo http
- import http from 'http'; 
+// Importano o modulo http
+import http from "http";
 
- // Criando Constante da porta
- const PORT = 3000;
+// Criando Constante da porta
+const PORT = 3000;
 
- // 1. Processar solicitações recebidas (req), responder
- const exemploResposta = (req, res) => {
+// 1. Processar solicitações recebidas (req), responder
 
-    // //responde texto plano
-    // res.writeHead(200, {'Conten-type': 'text/plain'});
-    // res.end('Primeiro APP')
-    
-    //responde html
-    // res.writeHead(200, {'Conten-type': 'text/html'});
-    // res.end('<h1>Bom dia </h1>')
+const exemploResposta = (req, res) => {
+  //Responde Texto plano
+  // res.writeHead(200,{'Content-Type': 'text/plain'});
+  // res.end('Primeiro APP');
 
-    //Responde JSON
-    // res.writeHead(200, {'Conten-type': 'application/json'});
-    // res.end(JSON.stringify({nome: 'senai'}))
+  //Responde HTML
+  // res.writeHead(200,{'Content-Type': 'text/html'});
+  // res.end('<h1>Bom dia</h1>');
 
-    res.writeHead(200, {'Conten-type': 'application/xml'});
-    res.end(`
+  //Responde JSON
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify({ nome: "SENAI" }));
+
+  //Responde XML
+  res.writeHead(200, { "Content-Type": "application/xml" });
+  res.end(`
         <note>
-          <to>Senai</to>
-          <from>Findes</from>
-          <heading>Lembrete</heading>
-          <body>
-             Treinamento NODE
-          </body>
-        </note>
-  `);
- }
+            <to>SENAI Vitória</to>
+            <from>FINDES</from>
+            <heading>Lembrete</heading>
+            <body>
+                Treinamento NODE
+            </body>
+        </note>   
+    `);
+};
 
- // 2.Criando um servidor com exemploResposta
- const server = http.createServer(exemploResposta);
+// 2. Criando um servidor com exemploResposta
+const server = http.createServer(exemploResposta);
 
- // 3. Iniciando servidor com a constante exemplosResposta
- server.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`)
- })
+// 3. Iniciando servidor com exemploResposta
+server.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});

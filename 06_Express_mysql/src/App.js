@@ -1,19 +1,20 @@
-import express from "express";
-import {createProduto, deletProduto, readProduto, updateProduto} from "./controllers/ProdutoControllers.js";
+import express from 'express';
+import { createProduto, deleteProduto, readProduto, updateProduto } from './controllers/ProdutoController.js';
+
 const app = express();
 const port = 3000;
+app.use(express.json());
 
-// ! Condigura o backend para se comunicar com o Json
-app.use(express.json())
-
-app.get("/", (req, res) => {
-  res.send("API funcionando");
+app.get('/',(req,res)=>{
+    res.send('API Funcionando');    
 });
-// & CURD produto
-app.post('/produto',createProduto)
-app.get('/produto',readProduto)
-app.put('/produto/:id',updateProduto)
-app.delete('/produto/:id',deletProduto)
-app.listen(port,()=>{ //O listen ele sobe o servidor
-    console.log(`APi rodando na porta ${port}`)
-})
+
+//CRUD Produto
+app.post('/produto',createProduto);
+app.get('/produto',readProduto);
+app.put('/produto/:id_produto',updateProduto);
+app.delete('/produto/:id_produto',deleteProduto)
+
+app.listen(port,()=>{
+    console.log(`API Rodando na porta ${port}`)
+});

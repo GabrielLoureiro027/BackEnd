@@ -4,16 +4,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/App.js"
+    "start": "node src/App.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "API",
-    "Banco de dados",
+    "Banco de Dados",
     "SQL",
     "MySQL"
   ],
-  "author": "Gabriel Loureiro",
+  "author": "Ramon de HOlanda",
   "license": "ISC",
   "description": "",
   "dependencies": {

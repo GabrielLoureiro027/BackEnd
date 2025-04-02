@@ -90,6 +90,30 @@ const Mostrar = () => {
     }
   };
 
+  //* Funcao para editar
+  const handleEdit = async (id, descricaoAtual) => {
+    const novaDescricao = prompt("Digite a nova descrição:", descricaoAtual);
+
+    // Verificar se o usuário digitou algo
+    if (novaDescricao === null || novaDescricao.trim() === "") {
+      alert("Descrição não pode ser vazia!");
+      return;
+    }
+
+    try {
+      // Atualiza a descrição no backend
+      await axios.put(`http://localhost:3000/foto/${id}`, {
+        alternativo: novaDescricao,
+      });
+
+      alert("Descrição atualizada com sucesso!");
+      fetchFotos(); // Refazer a busca pelas fotos após a atualização
+    } catch (error) {
+      console.error("Erro ao atualizar descrição:", error);
+      alert("Erro ao atualizar descrição, tente novamente.");
+    }
+  };
+
   return (
     <div className={style.bd}>
       <input type="file" accept="image/*" onChange={handleFileChange} />
@@ -128,7 +152,7 @@ const Mostrar = () => {
                 alt={foto.alternativo}
               />
               <p>{foto.alternativo}</p>
-              <button>Editar</button>
+              <button onClick={() => handleEdit(foto.id_foto, foto.alternativo)}>Editar</button>
               <br />
               <button onClick={() => handleDelete(foto.id_foto)}>Excluir</button>
             </div>
